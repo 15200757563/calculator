@@ -29,14 +29,19 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 set(SOURCES
     main.cpp
     mainwindow.cpp
+    formlib/standards/Standards.cpp
+    core/operation/arithmetic.cpp
 )
 
 set(HEADERS
     mainwindow.h
+    formlib/standards/Standards.h
+    core/operation/arithmetic.h
 )
 
 set(UI_FILES
     mainwindow.ui
+    formlib/standards/Standards.ui
 )
 
 set(RESOURCES
@@ -50,5 +55,12 @@ add_executable(calculator
     ${RESOURCES}
 )
 
+target_include_directories(calculator PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/operation
+    ${CMAKE_CURRENT_SOURCE_DIR}/formlib/standards
+)
 
+source_group("UI" FILES ${UI_FILES})
+source_group("Source" FILES ${SOURCES})
+source_group("Header" FILES ${HEADERS})
 target_link_libraries(calculator PRIVATE Qt5::Widgets)
