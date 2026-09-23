@@ -26,20 +26,29 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-if(ANDROID)
-  add_library(calculator SHARED
+set(SOURCES
     main.cpp
     mainwindow.cpp
+)
+
+set(HEADERS
     mainwindow.h
+)
+
+set(UI_FILES
     mainwindow.ui
-  )
-else()
-  add_executable(calculator
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-  )
-endif()
+)
+
+set(RESOURCES
+    res.qrc
+)
+
+add_executable(calculator
+    ${SOURCES}
+    ${HEADERS}
+    ${UI_FILES}
+    ${RESOURCES}
+)
+
 
 target_link_libraries(calculator PRIVATE Qt5::Widgets)
