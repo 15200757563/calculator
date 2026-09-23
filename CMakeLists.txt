@@ -29,19 +29,19 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 set(SOURCES
     main.cpp
     mainwindow.cpp
-    formlib/standards/Standards.cpp
+    formlib/standards/standards.cpp
     core/operation/arithmetic.cpp
 )
 
 set(HEADERS
     mainwindow.h
-    formlib/standards/Standards.h
+    formlib/standards/standards.h
     core/operation/arithmetic.h
 )
 
 set(UI_FILES
     mainwindow.ui
-    formlib/standards/Standards.ui
+    formlib/standards/standards.ui
 )
 
 set(RESOURCES

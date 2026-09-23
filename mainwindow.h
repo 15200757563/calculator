@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "Standards.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -20,5 +21,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void initForm();
+
+    Standards *m_pStandards;
 };
 #endif // MAINWINDOW_H

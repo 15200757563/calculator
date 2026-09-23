@@ -1,9 +1,8 @@
-#include "Standards.h"
-#include "ui_Standards.h"
+#include "standards.h"
+#include "ui_standards.h"
 
-Standards::Standards(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Standards)
+Standards::Standards(QWidget *parent) : QWidget(parent),
+                                        ui(new Ui::Standards)
 {
     ui->setupUi(this);
 }
