@@ -21,6 +21,8 @@ private slots:
     void onOperationClicked();
     void on_btn_backspace_released();
 
+    void on_btn_neg_released();
+
 private:
     Ui::Standards *ui;
 

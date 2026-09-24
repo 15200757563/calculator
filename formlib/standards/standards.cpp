@@ -122,10 +122,15 @@ inline void Standards::EditMain_reset()
 void Standards::on_btn_backspace_released()
 {
     QString line = ui->Edit_Main->text();
-    if(line.isEmpty())
-        return;
     line.chop(1);
     if(line.isEmpty())
         line = "0";
     ui->Edit_Main->setText(line);
+}
+
+void Standards::on_btn_neg_released()
+{
+    double value = ui->Edit_Main->text().toDouble();
+    value = -value;
+    ui->Edit_Main->setText(QString::number(value));
 }
