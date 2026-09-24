@@ -60,8 +60,7 @@ void Standards::onOperationClicked()
     QString subLineOld = ui->Edit_sub->text();
     if(!subLineOld.isEmpty())
     {
-        QChar ch = subLineOld.back();
-        ushort code = ch.unicode();
+        ushort code = lastOperKey.unicode();
         switch (code)
         {
             case '+':
@@ -76,6 +75,9 @@ void Standards::onOperationClicked()
             case '/':
                 valueOld /= valueNew;
                 break;
+            case '=':
+                valueOld = valueNew;
+                break;
             default:
                 return;
         }
@@ -84,15 +86,15 @@ void Standards::onOperationClicked()
     else
         valueOld = valueNew;
 
-    lastKey = btn->property("operation").toChar();
-
-    if(lastKey == '=')
+    lastOperKey = btn->property("operation").toChar();
+    lastKey = lastOperKey;
+    if(lastOperKey == '=')
     {
-        subLineNew = subLineOld + QString::number(valueNew) + lastKey + QString::number(valueOld);
+        subLineNew = subLineOld + QString::number(valueNew) + lastOperKey + QString::number(valueOld);
     }
     else
     {
-        subLineNew = QString::number(valueOld) + lastKey;
+        subLineNew = QString::number(valueOld) + lastOperKey;
     }
 
     ui->Edit_sub->setText(subLineNew);
@@ -116,3 +118,14 @@ inline void Standards::EditMain_reset()
     ui->Edit_Main->setText("0");
 }
 
+
+void Standards::on_btn_backspace_released()
+{
+    QString line = ui->Edit_Main->text();
+    if(line.isEmpty())
+        return;
+    line.chop(1);
+    if(line.isEmpty())
+        line = "0";
+    ui->Edit_Main->setText(line);
+}

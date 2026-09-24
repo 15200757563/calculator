@@ -19,6 +19,8 @@ private slots:
     void on_btn_lineClearMain_released();
     void on_btn_lineClearAll_released();
     void onOperationClicked();
+    void on_btn_backspace_released();
+
 private:
     Ui::Standards *ui;
 
@@ -28,6 +30,7 @@ private:
     QList<QPushButton*> btnNumbers;
     QList<QPushButton*> btnOperations;
     QChar lastKey;
+    QChar lastOperKey;
     double valueNew;
     double valueOld;
 };
