@@ -67,6 +67,16 @@
      </property>
     </widget>
    </widget>
+   <widget class="QStackedWidget" name="stkWidget_Main">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>400</width>
+      <height>650</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

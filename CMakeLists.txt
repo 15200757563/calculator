@@ -31,12 +31,14 @@ set(SOURCES
     mainwindow.cpp
     formlib/standards/standards.cpp
     core/operation/arithmetic.cpp
+    core/publicfunc/publicfun.cpp
 )
 
 set(HEADERS
     mainwindow.h
     formlib/standards/standards.h
     core/operation/arithmetic.h
+    core/publicfunc/publicfun.h
 )
 
 set(UI_FILES
@@ -58,6 +60,7 @@ add_executable(calculator
 target_include_directories(calculator PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/core/operation
     ${CMAKE_CURRENT_SOURCE_DIR}/formlib/standards
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/publicfunc
 )
 
 source_group("UI" FILES ${UI_FILES})

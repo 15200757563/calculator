@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    initForm();
 }
 
 MainWindow::~MainWindow()
@@ -16,5 +17,5 @@ void MainWindow::initForm()
 {
     m_pStandards = new Standards(this);
 
-    setCentralWidget(m_pStandards);
+    ui->stkWidget_Main->addWidget(m_pStandards);
 }
