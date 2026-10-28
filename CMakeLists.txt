@@ -24,26 +24,34 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #    endif()
 #endif()
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5 REQUIRED COMPONENTS
+    Widgets
+    PrintSupport
+    )
 
 set(SOURCES
     main.cpp
     mainwindow.cpp
     formlib/standards/standards.cpp
-    core/operation/arithmetic.cpp
-    core/publicfunc/publicfun.cpp
+    formlib/plot/mathfuncplot.cpp
+    core/arithmetic.cpp
+    core/publicfun.cpp
+    core/qcustomplot.cpp
 )
 
 set(HEADERS
     mainwindow.h
     formlib/standards/standards.h
-    core/operation/arithmetic.h
-    core/publicfunc/publicfun.h
+    formlib/plot/mathfuncplot.h
+    core/arithmetic.h
+    core/publicfun.h
+    core/qcustomplot.h
 )
 
 set(UI_FILES
     mainwindow.ui
     formlib/standards/standards.ui
+    formlib/plot/mathfuncplot.ui
 )
 
 set(RESOURCES
@@ -58,12 +66,15 @@ add_executable(calculator
 )
 
 target_include_directories(calculator PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/operation
     ${CMAKE_CURRENT_SOURCE_DIR}/formlib/standards
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/publicfunc
+    ${CMAKE_CURRENT_SOURCE_DIR}/formlib/plot
+    ${CMAKE_CURRENT_SOURCE_DIR}/core
 )
 
 source_group("UI" FILES ${UI_FILES})
 source_group("Source" FILES ${SOURCES})
 source_group("Header" FILES ${HEADERS})
-target_link_libraries(calculator PRIVATE Qt5::Widgets)
+target_link_libraries(calculator PRIVATE
+    Qt5::Widgets
+    Qt5::PrintSupport
+    )
