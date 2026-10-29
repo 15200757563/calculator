@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>585</width>
-    <height>545</height>
+    <width>400</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,16 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>90</y>
-     <width>581</width>
-     <height>301</height>
+     <y>0</y>
+     <width>400</width>
+     <height>400</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
   </widget>
  </widget>

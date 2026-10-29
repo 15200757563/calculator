@@ -34,15 +34,18 @@ set(SOURCES
     mainwindow.cpp
     formlib/standards/standards.cpp
     formlib/plot/mathfuncplot.cpp
+    formlib/titlebarwidget/titlebarwidget.cpp
     core/arithmetic.cpp
     core/publicfun.cpp
     core/qcustomplot.cpp
+
 )
 
 set(HEADERS
     mainwindow.h
     formlib/standards/standards.h
     formlib/plot/mathfuncplot.h
+    formlib/titlebarwidget/titlebarwidget.h
     core/arithmetic.h
     core/publicfun.h
     core/qcustomplot.h
@@ -52,6 +55,7 @@ set(UI_FILES
     mainwindow.ui
     formlib/standards/standards.ui
     formlib/plot/mathfuncplot.ui
+    formlib/titlebarwidget/titlebarwidget.ui
 )
 
 set(RESOURCES

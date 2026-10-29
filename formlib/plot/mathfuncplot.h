@@ -19,6 +19,13 @@ public:
 private:
     Ui::Mathfuncplot *ui;
     void drawLineGraph();
+    void updateUI();
+    void init();
+
+    QCustomPlot *plot;
+    QCPItemLine* m_lineZeroX; // y=0 横线（x轴）
+    QCPItemLine* m_lineZeroY; // x=0 竖线（y轴）
+    QCPGraph* m_graph = nullptr;
 };
 
 #endif // MATHFUNCPLOT_H

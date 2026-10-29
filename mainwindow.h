@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "standards.h"
-
+#include "mathfuncplot.h"
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
@@ -19,11 +19,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     void initForm();
 
     Standards *m_pStandards;
+    Mathfuncplot *m_pMathfuncplot;
 };
 #endif // MAINWINDOW_H
